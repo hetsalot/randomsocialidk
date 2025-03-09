@@ -15,13 +15,13 @@ const Navbar = () => {
   return (
     <div className="navbar h-[10vh] w-full flex justify-between items-center px-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-[1.4rem] font-bold">
       <div className="navbar-links flex flex-row items-center gap-4">
-        <Link to="/">Home</Link>
+        <Link to="/#/">Home</Link>
         {!user ? (
-          <Link to="/login">Login</Link>
+          <Link to="/#/login">Login</Link>
         ) : (
           <>
-            <Link to="/createpost">Create Post</Link>
-            <Link to="/myposts">My Posts</Link>
+            <Link to="/#/createpost">Create Post</Link>
+            <Link to="/#/myposts">My Posts</Link>
           </>
         )}
       </div>
