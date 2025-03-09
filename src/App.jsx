@@ -5,9 +5,10 @@ import Login from "./pages/login";
 import Navbar from "./components/navbar";
 import CreatePost from "./pages/create-post/createpost";
 import MyPosts from "./pages/my-posts/myposts";
+
 function App() {
   return (
-    <div>
+    <div className="bg-red-100 min-h-screen">
       <Router>
         <Navbar />
         <Routes>
