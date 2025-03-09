@@ -12,10 +12,10 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/#/" element={<Home />} />
-          <Route path="/#/login" element={<Login />} />
-          <Route path="/#/createpost" element={<CreatePost />} />
-          <Route path="/#/myposts" element={<MyPosts />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/createpost" element={<CreatePost />} />
+          <Route path="/myposts" element={<MyPosts />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </Router>
