@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../config/firebase";
 import { signOut } from "firebase/auth";
@@ -7,11 +7,15 @@ import { signOut } from "firebase/auth";
 const Navbar = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
-      navigate("/login", { replace: true }); // After logout, navigate to login page
-    });
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate("/login", { replace: true });
+    } catch (error) {
+      console.error("Sign out error:", error);
+    }
   };
 
   return (
