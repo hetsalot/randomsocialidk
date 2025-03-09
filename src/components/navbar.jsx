@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      navigate("/login"); // HashRouter will ensure it becomes #/login
+      navigate("/login", { replace: true }); // After logout, navigate to login page
     });
   };
 
